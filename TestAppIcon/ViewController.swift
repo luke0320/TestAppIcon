@@ -106,6 +106,12 @@ class ViewController: UIViewController {
     
     @objc
     private func onIconButtonTapped(_ sender: UIButton) {
+        
+        guard UIApplication.shared.supportsAlternateIcons else {
+            print("alternate icon not supported")
+            return
+        }
+        
         defer {
             updateIconButtonSelection()
         }
